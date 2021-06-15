@@ -2,7 +2,7 @@ package Programmers;
 
 import java.util.HashSet;
 
-public class P1845 {
+public class P1_1845 {
     public static void main(String[] args) {
         System.out.println(solution(new int[]{3,3,3,2,2,2}));
     }
