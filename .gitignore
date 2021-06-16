@@ -1,6 +1,2 @@
 #folder
-/out/
-/out/production/CodePractices/Programmers/
-/out/production/CodePractices/META-INF/
-out/production/CodePractices/META-INF/CodePractices.kotlin_module
-out/production/CodePractices/Programmers/P1_12903Kt.class
+/out/*
