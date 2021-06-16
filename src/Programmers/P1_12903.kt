@@ -3,7 +3,7 @@ package Programmers
 fun main() {
     System.out.println(solution("abcde"))
 }
-fun solution(s: String): String {
+private fun solution(s: String): String {
     var answer = ""
     var length = s.length
     if (length % 2 == 0)
