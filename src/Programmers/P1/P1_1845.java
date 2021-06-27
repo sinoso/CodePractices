@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.P1;
 
 import java.util.HashSet;
 

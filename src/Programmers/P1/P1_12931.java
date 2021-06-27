@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.P1;
 
 public class P1_12931 {
     public static void main(String[] args) {

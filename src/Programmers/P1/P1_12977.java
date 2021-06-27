@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.P1;
 public class P1_12977 {
     public static void main(String[] args) {
         System.out.println(solution(new int[]{1,2,7,6,4}));
