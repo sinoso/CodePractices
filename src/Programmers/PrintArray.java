@@ -11,6 +11,7 @@ public class PrintArray {
         }
         System.out.println(sb);
     }    public static void printArray2(int[][] array){
+    public static void printArray2(int[][] array) {
         StringBuilder sb = new StringBuilder();
         for(int[] subArray :array){
             sb.append("[");
