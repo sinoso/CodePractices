@@ -28,7 +28,7 @@ private fun solution(N: Int, stages: IntArray): IntArray {
             map[i + 1] = (usersInStage[i].toDouble() - stageClears[i]) / usersInStage[i]
         }else {
             map[i + 1] = 0.0
-        }
+        } 
     }
     return map.entries.stream()
             .sorted(comparingByValue()).collect(Collectors.toList()).sortedByDescending { mutableEntry -> mutableEntry.value }.map { entry -> entry.key }.toIntArray()
