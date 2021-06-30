@@ -1,4 +1,6 @@
-package Programmers;
+package Programmers.P2;
+
+import Programmers.PrintArray;
 
 public class P2_12949 {
     public static void main(String[] args) {
