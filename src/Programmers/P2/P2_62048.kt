@@ -5,7 +5,7 @@ fun main() {
 }
 
 private fun solution(w: Int, h: Int): Long {
-    return w * h.toLong() - (h+w-gcd(w,h).toLong())
+    return w * h.toLong() - (h + w - gcd(w, h).toLong())
 }
 
 private fun gcd(a: Int, b: Int): Int {
