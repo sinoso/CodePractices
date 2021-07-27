@@ -2,7 +2,7 @@ package Programmers.P2
 
 
 fun main() {
-    println(solution(10000).contentToString())
+    println(solution(4).contentToString())
 //    println(solution(5).contentToString())
 //    println(solution(6).contentToString())
 }
