@@ -2,7 +2,7 @@ package Programmers.P2
 
 
 fun main() {
-    println(solution(4).contentToString())
+    println(solution(10000).contentToString())
 //    println(solution(5).contentToString())
 //    println(solution(6).contentToString())
 }
@@ -21,14 +21,12 @@ private fun solution(n: Int): IntArray {
                     lastIndex += lastLine
                     answer[lastIndex] = lastValue++
                     lastLine++
-                    println(answer.contentToString())
                 }
             }
             1 -> { //좌 -> 우
                 while (lastIndex < answer.lastIndex && answer[lastIndex + 1] == 0) {
                     lastIndex += 1
                     answer[lastIndex] = lastValue++
-                    println(answer.contentToString())
                 }
             }
             2 -> { //하 -> 상
@@ -36,7 +34,6 @@ private fun solution(n: Int): IntArray {
                     lastIndex -= lastLine
                     answer[lastIndex] = lastValue++
                     lastLine--
-                    println(answer.contentToString())
                 }
             }
         }
