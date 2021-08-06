@@ -16,10 +16,8 @@ public class P2_12924 {
             for (int i = startValue; i < n; i++) {
                 temp += i;
                 if (temp >= n) {
-                    if (temp > n) {
-                        break;
-                    }
-                    answer++;
+                    if (temp == n)
+                        answer++;
                     break;
                 }
             }
