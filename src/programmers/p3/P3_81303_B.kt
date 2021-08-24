@@ -1,4 +1,4 @@
-package programmers.p2
+package programmers.p3
 
 import java.util.*
 
