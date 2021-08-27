@@ -1,9 +1,9 @@
 package programmers.p2
 
 fun main() {
-//    println(solution(10, 2).contentToString())
-//    println(solution(8, 1).contentToString())
-//    println(solution(24, 24).contentToString())
+    println(solution(10, 2).contentToString())
+    println(solution(8, 1).contentToString())
+    println(solution(24, 24).contentToString())
     println(solution(4994, 1556256).contentToString())
 }
 
