@@ -11,7 +11,7 @@ public class P2_49994 {
         System.out.println(solution("LULLLLLLU"));
     }
 
-    class Pair implements Serializable {
+    static class Pair implements Serializable {
         final int key;
         final int value;
 
