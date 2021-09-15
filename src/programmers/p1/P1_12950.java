@@ -1,6 +1,6 @@
 package programmers.p1;
 
-import programmers.PrintArray;
+import tools.PrintArray;
 
 public class P1_12950 {
     public static void main(String[] args) {

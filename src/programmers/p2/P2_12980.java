@@ -1,7 +1,5 @@
 package programmers.p2;
 
-import programmers.PrintArray;
-
 public class P2_12980 {
     public static void main(String[] args) {
         System.out.println(solution(1));

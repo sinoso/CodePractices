@@ -1,5 +1,7 @@
 package programmers
 
+import tools.PrintArray
+
 fun main() {
     PrintArray.printArray2(solution(arrayOf(intArrayOf(1, 4), intArrayOf(3, 2), intArrayOf(4, 1)), arrayOf(intArrayOf(3, 3), intArrayOf(3, 3))))
 }
