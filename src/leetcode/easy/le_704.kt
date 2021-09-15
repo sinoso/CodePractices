@@ -15,9 +15,9 @@ fun recursion(nums: IntArray, target: Int, minPoint: Int, maxPoint: Int): Int {
         minPoint > maxPoint ->
             -1
         nums[half] < target ->
-            recursion(nums, target, ++half, maxPoint)
+            recursion(nums, target, half+1, maxPoint)
         nums[half] > target ->
-            recursion(nums, target, minPoint, --half)
+            recursion(nums, target, minPoint, half-1)
         else ->
             half
     }
