@@ -1,10 +1,10 @@
-import kotlin.math.absoluteValue
+package leetcode.medium
 
 fun main() {
-//    println(intArrayOf(1, 2, 3, 4, 5, 6, 7).also { rotate(it, 3) }.joinToString())
+//    println(intArrayOf(1, 2, 3, 4, 5, 6, 7).also { leetcode.medium.rotate(it, 3) }.joinToString())
     println(intArrayOf(-1, -100, 3, 99).also { rotate(it, 2) }.joinToString())
-//    println(intArrayOf(1,2).also { rotate(it, 3) }.joinToString())
-//    println(intArrayOf(1, 2, 3).also { rotate(it, 4) }.joinToString())
+//    println(intArrayOf(1,2).also { leetcode.medium.rotate(it, 3) }.joinToString())
+//    println(intArrayOf(1, 2, 3).also { leetcode.medium.rotate(it, 4) }.joinToString())
 
 
 }
