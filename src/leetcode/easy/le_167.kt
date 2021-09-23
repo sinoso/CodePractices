@@ -5,7 +5,7 @@ fun main() {
 }
 
 
-fun twoSum(numbers: IntArray, target: Int): IntArray {
+private fun twoSum(numbers: IntArray, target: Int): IntArray {
     var first = 0
     var second = numbers.lastIndex
     while (first != second) {
