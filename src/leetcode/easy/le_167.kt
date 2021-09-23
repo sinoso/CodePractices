@@ -21,7 +21,7 @@ private fun twoSum(numbers: IntArray, target: Int): IntArray {
     return intArrayOf(first+1,second+1)
 }
 
-fun twoSum2(numbers: IntArray, target: Int): IntArray {
+private fun twoSum2(numbers: IntArray, target: Int): IntArray {
     var first = 0
     var second = 0
     for (i in numbers.indices) {
