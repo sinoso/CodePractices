@@ -6,7 +6,7 @@ fun main() {
     fun ListNode.printAllN() {
         var next: ListNode? = this
         while (next != null) {
-            print("${next.i} ")
+            print("${next.`val`} ")
             next = next.next
         }
         println()
