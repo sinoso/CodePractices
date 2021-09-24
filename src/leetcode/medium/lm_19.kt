@@ -1,5 +1,7 @@
 package leetcode.medium
 
+import leetcode.testclass.ListNode
+
 fun main() {
     fun ListNode.printAllN() {
         var next: ListNode? = this
@@ -17,10 +19,6 @@ fun main() {
     removeNthFromEnd(ListNode(1).also { it1 -> it1.next = ListNode(2).also { it2 -> it2.next = ListNode(3).also { it3 -> it3.next = ListNode(4) } } }, 4)?.printAllN()
     removeNthFromEnd(ListNode(1).also { it1 -> it1.next = ListNode(2).also { it2 -> it2.next = ListNode(3).also { it3 -> it3.next = ListNode(4).also { it4 -> it4.next = ListNode(5) } } } }, 4)?.printAllN()
     removeNthFromEnd(ListNode(1).also { it1 -> it1.next = ListNode(2).also { it2 -> it2.next = ListNode(3).also { it3 -> it3.next = ListNode(4).also { it4 -> it4.next = ListNode(5) } } } }, 2)?.printAllN()
-}
-
-class ListNode(val i: Int) {
-    var next: ListNode? = null
 }
 
 // 처음이면?
