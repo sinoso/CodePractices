@@ -3,14 +3,6 @@ package leetcode.medium
 import leetcode.testclass.ListNode
 
 fun main() {
-    fun ListNode.printAllN() {
-        var next: ListNode? = this
-        while (next != null) {
-            print("${next.`val`} ")
-            next = next.next
-        }
-        println()
-    }
     removeNthFromEnd(ListNode(1), 1)?.printAllN()
     println()
     removeNthFromEnd(ListNode(1).also { it1 -> it1.next = ListNode(2) }, 2)?.printAllN()
