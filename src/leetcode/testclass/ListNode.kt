@@ -1,6 +1,6 @@
 package leetcode.testclass
 
-class ListNode(val `val`:Int) {
+class ListNode(var `val`:Int) {
     var next: ListNode? = null
 
     fun printAllN() {
