@@ -15,5 +15,5 @@ private fun solution(answers: IntArray): IntArray {
             }
         }
     }
-    return supojas.indices.filter { v -> answer[v] == answer.max() }.map { v -> v + 1 }.toIntArray()
+    return supojas.indices.filter { v -> answer[v] == answer.maxOrNull() }.map { v -> v + 1 }.toIntArray()
 }

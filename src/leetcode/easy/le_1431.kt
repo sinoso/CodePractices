@@ -5,6 +5,6 @@ fun main() {
 }
 
 private fun kidsWithCandies(candies: IntArray, extraCandies: Int): List<Boolean> =
-        (candies.max() ?: 0).run {
+        (candies.maxOrNull() ?: 0).run {
             candies.map { it + extraCandies >= this }
         }

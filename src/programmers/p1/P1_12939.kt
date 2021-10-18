@@ -6,5 +6,5 @@ fun main() {
 
 private fun solution(s: String): String {
     val intArray = s.split(" ").map { v -> v.toInt() }
-    return "${intArray.min()} ${intArray.max()}"
+    return "${intArray.minOrNull()} ${intArray.maxOrNull()}"
 }

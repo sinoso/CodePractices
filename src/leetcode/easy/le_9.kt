@@ -13,7 +13,7 @@ private fun isPalindrome(x: Int): Boolean {
     if (x < 0)
         return false
     val xLength = log10(x.toDouble())
-    var left = 10
+    var left = (10).toDouble()
     var right = (10).toDouble().pow((xLength + 1))
     while (left < right){
         if((x/left) != (x/right))

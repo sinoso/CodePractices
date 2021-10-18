@@ -5,4 +5,4 @@ fun main() {
     println(solution(intArrayOf(10)).contentToString())
 }
 
-private fun solution(arr: IntArray): IntArray = if (arr.size == 1) intArrayOf(-1) else arr.filter { v -> v != arr.min() }.toIntArray()
+private fun solution(arr: IntArray): IntArray = if (arr.size == 1) intArrayOf(-1) else arr.filter { v -> v != arr.minOrNull() }.toIntArray()

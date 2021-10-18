@@ -11,7 +11,7 @@ private fun solution(priorities: IntArray, location: Int): Int {
     var queueList = MutableList(priorities.size) { v -> v }
     var lastIndex = -1
     while (lastIndex != location) {
-        if (priorities.max() == priorities[queueList[0]]) {
+        if (priorities.maxOrNull() == priorities[queueList[0]]) {
             priorities[queueList[0]] = -1
             lastIndex = queueList[0]
             answer++
