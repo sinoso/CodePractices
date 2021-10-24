@@ -15,9 +15,6 @@ fun main() {
     println(countNodes(node))
 }
 
-// 처음이면?
-//중간이면?
-//끝이면?
 private fun countNodes(root: TreeNode?): Int {
     var count = 0
     root?.let { count++ } ?: return count
