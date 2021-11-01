@@ -14,7 +14,7 @@ private fun findCenter(edges: Array<IntArray>): Int {
             this.add(it[0])
         }
     }
-    return map.maxBy { it.value.size }!!.key
+    return map.maxByOrNull { it.value.size }!!.key
 }
 private fun findCenter2(edges: Array<IntArray>): Int {
     val map = mutableMapOf<Int, MutableSet<Int>>()
