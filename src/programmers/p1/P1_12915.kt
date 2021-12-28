@@ -7,13 +7,8 @@ fun main() {
     println(solution(arrayOf("abce", "abcd", "cdx"), 2).contentToString())
 }
 
-private fun solution(strings: Array<String>, n: Int): Array<String> {
-    strings.also { it ->
-        it.sort()
-        it.sortBy { it[n] }
-    }
-    return strings
-}
+private fun solution(strings: Array<String>, n: Int): Array<String> =
+    strings.sortedWith(compareBy<String> { it[n] }.thenBy { it }).toTypedArray()
 
 private fun solution2(strings: Array<String>, n: Int): Array<String> {
     Arrays.sort(strings)
@@ -23,6 +18,14 @@ private fun solution2(strings: Array<String>, n: Int): Array<String> {
     Arrays.sort(strings)
     for (i in strings.indices) {
         strings[i] = strings[i].substring(1)
+    }
+    return strings
+}
+
+private fun solution3(strings: Array<String>, n: Int): Array<String> {
+    strings.also { it ->
+        it.sort()
+        it.sortBy { it[n] }
     }
     return strings
 }
