@@ -7,8 +7,27 @@ fun main() {
     println(isAnagram("a", "ab"))
 }
 
+private fun isAnagram(s: String, t: String): Boolean = mutableMapOf<Char, Int>()
+    .apply {
+        s.toCharArray().forEach { this[it] = getOrDefault(it, 0) + 1 }
+    } == mutableMapOf<Char, Int>()
+    .apply {
+        t.toCharArray().forEach { this[it] = getOrDefault(it, 0) + 1 }
+    }
 
-private fun isAnagram(s: String, t: String): Boolean {
+private fun isAnagram2(s: String, t: String): Boolean {
+    val mapS = mutableMapOf<Char, Int>()
+        .apply {
+            s.forEach { this[it] = getOrDefault(it, 0) + 1 }
+        }
+    val mapT = mutableMapOf<Char, Int>()
+        .apply {
+            t.forEach { this[it] = getOrDefault(it, 0) + 1 }
+        }
+    return mapT == mapS
+}
+
+private fun isAnagram3(s: String, t: String): Boolean {
     val a = s.groupingBy { it }.eachCount()
     val b = t.groupingBy { it }.eachCount()
     val largeOne: Map<Char, Int>
