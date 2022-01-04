@@ -1,9 +1,9 @@
 package leetcode.easy
 
 fun main() {
-    println(bitwiseComplement(5) == 2)
-    println(bitwiseComplement(7) == 0)
-    println(bitwiseComplement(0) == 1)
+    println(bitwiseComplement(5).also { print(it == 2) })
+    println(bitwiseComplement(7).also { print(it == 0) })
+    println(bitwiseComplement(0).also { print(it == 1) })
 }
 
 private fun bitwiseComplement(n: Int): Int {
