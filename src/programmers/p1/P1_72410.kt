@@ -16,11 +16,20 @@ private fun solution(new_id: String): String =
                 .replace("[.]+".toRegex(), ".")
                 .removeSuffix(".").removePrefix(".")
                 .ifBlank { "a" }
+                .run {if (length > 15) substring(0..14) else this }
+                .removeSuffix(".")
+                .run { if (length < 3) padEnd(3, this[lastIndex]) else this }
+
+private fun solution2(new_id: String): String =
+        new_id.toLowerCase().replace("""([^a-z0-9-_. ])""".toRegex(), "")
+                .replace("[.]+".toRegex(), ".")
+                .removeSuffix(".").removePrefix(".")
+                .ifBlank { "a" }
                 .let { if (it.length > 15) it.substring(0..14) else it }
                 .removeSuffix(".")
                 .let { if (it.length < 3) it.padEnd(3, it[it.lastIndex]) else it }
 
-private fun solution2(new_id: String): String {
+private fun solution3(new_id: String): String {
     var answer: String = new_id
     //step 1
     //step 2
