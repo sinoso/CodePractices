@@ -11,12 +11,45 @@ fun main() {
         right = TreeNode(7)
     }
     println(insertIntoBST(node, 5))
+    println(insertIntoBST(null, 5))
 }
 
-private fun insertIntoBST(root: TreeNode?, `val`: Int): TreeNode =
-    root?.also { findAndSet(root, `val`) } ?: TreeNode(`val`)
+private fun insertIntoBST(root: TreeNode?, `val`: Int): TreeNode? {
+    var currentNode = root
+    while (currentNode != null) {
+        currentNode.apply {
+            if (this.`val` < `val`)
+                apply {
+                    right?.let { currentNode = it } ?: run {
+                        right = TreeNode(`val`)
+                        return root
+                    }
+                }
+            else
+                apply {
+                    left?.let { currentNode = it } ?: run {
+                        left = TreeNode(`val`)
+                        return root
+                    }
+                }
+        }
+    }
+    return TreeNode(`val`)
+}
 
 private fun insertIntoBST2(root: TreeNode?, `val`: Int): TreeNode? {
+    root ?: return TreeNode(`val`)
+    if (root.`val` < `val`)
+        root.right = insertIntoBST(root.right, `val`)
+    else
+        root.left = insertIntoBST(root.left, `val`)
+    return root
+}
+
+private fun insertIntoBST3(root: TreeNode?, `val`: Int): TreeNode =
+    root?.also { findAndSet(root, `val`) } ?: TreeNode(`val`)
+
+private fun insertIntoBST4(root: TreeNode?, `val`: Int): TreeNode? {
     root ?: return TreeNode(`val`)
     findAndSet(root, `val`)
     return root
