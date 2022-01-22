@@ -2,7 +2,6 @@ package leetcode.easy
 
 import leetcode.testclass.TreeNode
 import java.util.*
-import kotlin.collections.LinkedHashSet
 
 fun main() {
     val node = TreeNode(1).apply {
@@ -42,6 +41,26 @@ fun main() {
 }
 
 private fun isCousins(root: TreeNode?, x: Int, y: Int): Boolean {
+    val queue = LinkedList<TreeNode?>() as Queue<TreeNode?>
+    queue.add(root)
+    while (queue.isNotEmpty()) {
+        val indexOfX = queue.indexOfFirst { it?.`val` == x }
+        val indexOfY = queue.indexOfFirst { it?.`val` == y }
+        when {
+            indexOfX != -1 && indexOfY != -1 -> return indexOfX / 2 != indexOfY / 2
+            indexOfX != -1 || indexOfY != -1 -> return false
+        }
+        repeat(queue.size) {
+            queue.poll()?.let {
+                queue.add(it.left)
+                queue.add(it.right)
+            }
+        }
+    }
+    return false
+}
+
+private fun isCousins2(root: TreeNode?, x: Int, y: Int): Boolean {
     var currentQueue = LinkedList<TreeNode?>() as Queue<TreeNode?>
     var subQueue = LinkedList<TreeNode?>() as Queue<TreeNode?>
     currentQueue.add(root)
@@ -65,7 +84,7 @@ private fun isCousins(root: TreeNode?, x: Int, y: Int): Boolean {
     return false
 }
 
-private fun isCousins2(root: TreeNode?, x: Int, y: Int): Boolean {
+private fun isCousins3(root: TreeNode?, x: Int, y: Int): Boolean {
     var currentQueue = LinkedList<TreeNode?>() as Queue<TreeNode?>
     var subQueue = LinkedList<TreeNode?>() as Queue<TreeNode?>
     val list = LinkedList<Int>()
