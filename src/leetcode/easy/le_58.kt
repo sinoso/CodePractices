@@ -7,7 +7,9 @@ fun main() {
     println(lengthOfLastWord("a"))//1
 }
 
-private fun lengthOfLastWord(s: String): Int {
+private fun lengthOfLastWord(s: String): Int = s.split(" ").last { it.isNotBlank() }.length
+
+private fun lengthOfLastWord2(s: String): Int {
     var answer = 0
     for (index in s.indices.reversed()) {
         if (s[index] != ' ') {
@@ -22,7 +24,7 @@ private fun lengthOfLastWord(s: String): Int {
     return answer
 }
 
-private fun lengthOfLastWord2(s: String): Int {
+private fun lengthOfLastWord3(s: String): Int {
     var answer = 0
     var currentIdx = s.lastIndex
     while (s[currentIdx] == ' ')
