@@ -11,6 +11,23 @@ fun main() {
 private fun findMaxLength(nums: IntArray): Int {
     var max = 0
     var count = 0
+    val map = HashMap<Int, Int>()
+    map[0] = -1// 주석 1
+    for (i in nums.indices) {
+        count += if (nums[i] == 0) -1 else +1
+        val valueInMap = map[count]
+        if (valueInMap != null) {
+            max = max.coerceAtLeast(i - valueInMap)
+            continue
+        }
+        map[count] = i
+    }
+    return max
+}
+
+private fun findMaxLength2(nums: IntArray): Int {
+    var max = 0
+    var count = 0
     val map = HashMap<Int, Int>().apply {
         this[0] = -1// 주석 1
     }
