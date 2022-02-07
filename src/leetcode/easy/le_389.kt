@@ -9,10 +9,10 @@ private fun findTheDifference(s: String, t: String): Char {
     val g1 = t.groupingBy { it }.eachCount()
     val g2 = s.groupingBy { it }.eachCount()
 
-    for (entrie in g1) {
-        val g2Value = g2[entrie.key] ?: return entrie.key
-        if (entrie.value != g2Value)
-            return entrie.key
+    for (entre in g1) {
+        val g2Value = g2[entre.key] ?: return entre.key
+        if (entre.value != g2Value)
+            return entre.key
     }
     return ' '
 }
