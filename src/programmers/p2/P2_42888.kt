@@ -16,6 +16,36 @@ fun main() {
 }
 
 
+private fun solution2(record: Array<String>): Array<String> {
+    val users = HashMap<String, String>()
+    val array = Array(record.filter { !it.contains("Change") }.size) { "" }
+    var arrayIdx = 0
+    record.forEach {
+        with(it.split(" ")) {
+            when (size) {
+                2 -> array[arrayIdx++] = "${this[0]},${this[1]}"
+                3 -> {
+                    if (this[0] != "Change")
+                        array[arrayIdx++] = "${this[0]},${this[1]}"
+                    users[this[1]] = this[2]
+                }
+            }
+        }
+    }
+    return array.apply {
+        indices.forEach {
+            this[it] = this[it].split(",").run {
+                when (this[0]) {
+                    "Enter" -> "${users[this[1]]}님이 들어왔습니다."
+                    "Leave" -> "${users[this[1]]}님이 나갔습니다."
+                    else -> ""
+                }
+            }
+        }
+    }
+}
+
+
 private fun solution(record: Array<String>): Array<String> {
     val users = HashMap<String, String>()
     val recorded = ArrayList<Pair<String, String>>()
@@ -24,9 +54,10 @@ private fun solution(record: Array<String>): Array<String> {
             when (size) {
                 2 -> recorded.add(Pair(this[0], this[1]))
 
-                3 -> if (this[0] != "Change")
+                3 -> if (this[0] != "Change") {
                     recorded.add(Pair(this[0], this[1]))
-                else users[this[1]] = this[2]
+                    users[this[1]] = this[2]
+                }
             }
         }
     }
