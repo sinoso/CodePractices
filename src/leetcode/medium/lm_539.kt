@@ -16,8 +16,7 @@ private fun findMinDifference(timePoints: List<String>): Int {
             return 1440 - answer
         return answer
     }
-
-    val sorted = timePoints.sortedWith(compareBy<String> { it[0] }.thenBy { it[1] }.thenBy { it[3] }.thenBy { it[4] })
+    val sorted = timePoints.sorted()
     var answer = sorted.first().checkDiff(sorted.last())
     var i = 0
     while (answer != 0 && i < sorted.lastIndex) {
