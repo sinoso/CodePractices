@@ -1,5 +1,6 @@
 package leetcode.medium
 
+import leetcode.testclass.Node
 import java.util.*
 
 fun main() {
@@ -78,8 +79,4 @@ private fun cloneGraph3(node: Node?): Node? {
         }
     }
     return returnNode
-}
-
-class Node(var `val`: Int) {
-    var neighbors: ArrayList<Node?> = ArrayList<Node?>()
 }
