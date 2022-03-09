@@ -22,5 +22,13 @@ class ListNode(var `val`: Int) {
             }
             return head
         }
+        fun createByInts(vararg values: Int): ListNode {
+            val head = ListNode(values.first())
+            var current = head
+            (1..values.lastIndex).forEach { idx ->
+                current.next = ListNode(values[idx]).also { current = it }
+            }
+            return head
+        }
     }
 }
