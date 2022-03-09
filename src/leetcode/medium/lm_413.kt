@@ -1,9 +1,6 @@
 package leetcode.medium
 
 import printResult
-import programmers.a
-import java.util.*
-import kotlin.collections.HashMap
 
 fun main() {
     printResult(numberOfArithmeticSlices(intArrayOf(1, 2, 3, 4)), 3)
