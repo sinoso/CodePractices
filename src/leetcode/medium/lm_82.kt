@@ -3,29 +3,22 @@ package leetcode.medium
 import leetcode.testclass.ListNode
 
 fun main() {
-    val head = ListNode(1).apply { next = ListNode(1).apply { next = ListNode(2).apply { next = ListNode(3) } } }
+    val head = ListNode.createByInts(1, 1, 2, 3)
     head.printAllN()
     deleteDuplicates(head)?.printAllN() ?: println(" 없음 ")
     println()
-    val head2 = ListNode(1).apply {
-        next = ListNode(2).apply {
-            next = ListNode(2).apply { next = ListNode(3).apply { next = ListNode(3).apply { next = ListNode(4) } } }
-        }
-    }
+    val head2 = ListNode.createByInts(1, 2, 2, 3, 3, 4)
     head2.printAllN()
     deleteDuplicates(head2)?.printAllN() ?: println(" 없음 ")
-    val head3 = ListNode(1).apply {
-        next = ListNode(2).apply { next = ListNode(2).apply { next = ListNode(3).apply { next = ListNode(3) } } }
-    }
+    val head3 = ListNode.createByInts(1, 2, 2, 3, 3)
     println()
     head3.printAllN()
     deleteDuplicates(head3)?.printAllN() ?: println(" 없음 ")
     println()
-    ListNode(1).apply { next = ListNode(3).apply { next = ListNode(4) } }.also {
+    ListNode.createByInts(1, 2, 3).also {
         it.printAllN()
         deleteDuplicates(it)?.printAllN() ?: println(" 없음 ")
     }
-
 }
 
 // 14:00
@@ -36,7 +29,7 @@ fun main() {
 private fun deleteDuplicates(head: ListNode?): ListNode? {
     val preHead = ListNode(-101).apply { next = head }
     var preNode: ListNode = preHead
-    var lastNode: ListNode = preHead.next?: return null
+    var lastNode: ListNode = preHead.next ?: return null
     var currentNode = lastNode.next
     var notDuplicated = true
     while (currentNode != null) {
