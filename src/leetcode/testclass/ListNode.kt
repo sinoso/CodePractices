@@ -14,7 +14,9 @@ class ListNode(var `val`: Int) {
     }
 
     companion object {
-        fun createByArray(array: IntArray): ListNode {
+        fun createByArray(array: IntArray?): ListNode? {
+            array?: return null
+            if (array.isEmpty()) return null
             val head = ListNode(array[0])
             var current = head
             (1..array.lastIndex).forEach { idx ->
