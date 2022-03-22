@@ -9,6 +9,25 @@ fun main() {
 }
 
 private fun getSmallestString(n: Int, k: Int): String {
+    val stringBuilder = StringBuilder()
+    repeat(n) {
+        stringBuilder.append('a')
+    }
+    var left = k - n
+    var idx = stringBuilder.lastIndex
+    while (left > 0) {
+        left -= 25
+        if (left > 0)
+            stringBuilder.setCharAt(idx, stringBuilder[idx] + 25)
+        else
+            stringBuilder.setCharAt(idx, stringBuilder[idx] + 25 + left)
+        idx--
+    }
+    return stringBuilder.toString()
+}
+
+
+private fun getSmallestString2(n: Int, k: Int): String {
     var zCount = 0
     var left = k - n
     while (left > 25) {
