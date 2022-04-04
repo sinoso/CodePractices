@@ -12,6 +12,15 @@ class ListNode(var `val`: Int) {
         }
         println()
     }
+    fun joinAll():String {
+        var next: ListNode? = this
+        val stringBuilder = StringBuilder()
+        while (next != null) {
+            stringBuilder.append("${next.`val`} ")
+            next = next.next
+        }
+        return stringBuilder.toString()
+    }
 
     companion object {
         fun createByArray(array: IntArray?): ListNode? {
