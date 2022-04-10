@@ -10,7 +10,7 @@ fun <T> printResult(
 fun  printResult(
     actual: IntArray,
     expected: IntArray,
-    equalChecker: (actual: IntArray, expected: IntArray) -> Boolean = { it1, it2 -> it1 == it2 },
+    equalChecker: (actual: IntArray, expected: IntArray) -> Boolean = { it1, it2 -> it1.contentEquals(it2) },
 ) =
     println(actual.joinToString(", ").also {
         if (equalChecker(actual, expected)) print("pass ") else print("fail ")
