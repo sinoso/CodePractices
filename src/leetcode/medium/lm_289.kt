@@ -45,10 +45,11 @@ private fun gameOfLife(board: Array<IntArray>): Unit {
             }
 }
 
-
+var colRange:IntRange = 0..0
+var rowRange:IntRange = 0..0
 private fun numberOfNearCells(i: Int, j: Int, maxRow: Int, maxCol: Int, board: Array<IntArray>): Int {
-    val colRange = IntRange(if (i == 0) i else i - 1, if (i == maxCol) i else i + 1)
-    val rowRange = IntRange(if (j == 0) j else j - 1, if (j == maxRow) j else j + 1)
+    colRange = IntRange(if (i == 0) i else i - 1, if (i == maxCol) i else i + 1)
+    rowRange = IntRange(if (j == 0) j else j - 1, if (j == maxRow) j else j + 1)
     var count = 0
     for (row in rowRange)
         for (col in colRange)
