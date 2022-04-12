@@ -7,7 +7,8 @@ fun <T> printResult(
         if (equalChecker(actual, expected)) print("pass ") else print("fail ")
         print("expected = $expected , actual = ")
     })
-fun  printResult(
+
+fun printResult(
     actual: IntArray,
     expected: IntArray,
     equalChecker: (actual: IntArray, expected: IntArray) -> Boolean = { it1, it2 -> it1.contentEquals(it2) },
@@ -18,6 +19,7 @@ fun  printResult(
     })
 
 fun <T> printResult(actual: Array<T>, expected: Array<T>) = printResult(actual, expected, ::arrayChecker)
+fun printResult(actual: Array<IntArray>, expected: Array<IntArray>) = printResult(actual, expected, ::arrayChecker)
 fun printResult(actual: IntArray, expected: IntArray) = printResult(actual, expected, ::intArrayChecker)
 
 private fun <T> arrayChecker(actual: Array<T>, expected: Array<T>): Boolean {
@@ -25,6 +27,15 @@ private fun <T> arrayChecker(actual: Array<T>, expected: Array<T>): Boolean {
         return false
     for (i in actual.indices)
         if (actual[i] != expected[i])
+            return false
+    return true
+}
+
+private fun arrayChecker(actual: Array<IntArray>, expected: Array<IntArray>): Boolean {
+    if (actual.size != expected.size)
+        return false
+    for (i in actual.indices)
+        if (!intArrayChecker(actual[i], expected[i]))
             return false
     return true
 }
