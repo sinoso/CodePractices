@@ -47,6 +47,8 @@ class TreeNode(var `val`: Int) {
                 head
             }
         }
+
+        fun createByInts(vararg array: Int?): TreeNode? = createByArray(array.toList().toTypedArray())
     }
 }
 /*
