@@ -27,9 +27,9 @@ private fun maxSatisfaction(satisfaction: IntArray): Int {
 /*
 *    -9   -8    -1   0     5
      -9  -16    -3   0    25         -3     acc = -13
-          -8    -2   0    20         10     acc = -4   - stop
-                -1   0    15         14     acc = 4
-                     0    10         10     acc = 5
-                          5           5     acc = 5
+          -8    -2   0    20         10     acc =  -4   - stop
+                -1   0    15         14     acc =   4
+                     0    10         10     acc =   5
+                           5          5     acc =   5
 
 * */
