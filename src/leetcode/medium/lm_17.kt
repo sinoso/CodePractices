@@ -5,24 +5,20 @@ fun main() {
 }
 
 private fun letterCombinations(digits: String): List<String> {
-    fun HashMap<Char, CharArray>.ad(c:Char,s:String){
-        this[c] = s.toCharArray()
-    }
     if (digits == "")
         return listOf()
-    val array = digits.toCharArray()
-    val charSet = HashMap<Char, CharArray>().apply {
-        ad('2', "abc")
-        ad('3', "def")
-        ad('4', "ghi")
-        ad('5', "jkl")
-        ad('6', "mno")
-        ad('7', "pqrs")
-        ad('8', "tuv")
-        ad('9', "wxyz")
+    val charSet = HashMap<Char, String>().apply {
+        this['2'] = "abc"
+        this['3'] = "def"
+        this['4'] = "ghi"
+        this['5'] = "jkl"
+        this['6'] = "mno"
+        this['7'] = "pqrs"
+        this['8'] = "tuv"
+        this['9'] = "wxyz"
     }
     var answerList = listOf("")
-    for (char in array)
+    for (char in digits)
         mutableListOf<String>().run {
             for (new in charSet[char]!!)
                 for (old in answerList)
