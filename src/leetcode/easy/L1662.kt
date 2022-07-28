@@ -29,7 +29,7 @@ private fun arrayStringsAreEqual(word1: Array<String>, word2: Array<String>): Bo
                 return false
         }
     }
-    return w2Index==w2Length &&word2ArraySize==word2ArrayIndex
+    return w2Index == w2Length && word2ArraySize == word2ArrayIndex
 }
 // 어떻게 할 것인가?
 // word1을 순한 한다.
