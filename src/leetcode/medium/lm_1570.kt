@@ -59,3 +59,13 @@ class SparseVector4(val nums: IntArray) {
         nums.indices.map { idx -> vec.nums[idx] * nums[idx] }.sum()
 }
 
+private class SparseVector5(nums: IntArray) {
+    val nonZeroNumbers =
+        nums.foldRightIndexed(mutableListOf<Pair<Int, Int>>()) { index, i, acc -> if (i != 0) acc.apply { add(index to i) } else acc }
+            .toMap()
+
+    fun dotProduct(vec: SparseVector5): Int =
+        nonZeroNumbers.entries.fold(0) { acc, entry ->
+            acc + (vec.nonZeroNumbers[entry.key] ?: return@fold acc) * entry.value
+        }
+}
