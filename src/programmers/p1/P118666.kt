@@ -6,7 +6,9 @@ fun main() {
 
 //14:22 ~ 14:48
 private fun solution(survey: Array<String>, choices: IntArray): String =
-    choices.zip(survey).map { (choice, survey) ->
+    choices.zip(survey)
+        .filter { it.first != 4 }
+        .map { (choice, survey) ->
         val point = choice - 4
         if (survey[0] - survey[1] < 0) {
             survey[1] to (point * -1)
