@@ -8,7 +8,7 @@ fun main() {
 private fun prefixCount(words: Array<String>, pref: String): Int {
     var answer = 0
     for (word in words) {
-        if (word.length == pref.length)
+        if (word.length < pref.length)
             continue
         var flag = false
         for (i in pref.indices) {
