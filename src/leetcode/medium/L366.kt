@@ -12,7 +12,7 @@ private fun findLeaves(root: TreeNode?): List<List<Int>> {
     return answerList
 }
 
-fun search(root: TreeNode): Int {
+private fun search(root: TreeNode): Int {
     var currentDepth = 0
     root.left?.let { currentDepth = currentDepth.coerceAtLeast(search(it)) }
     root.right?.let { currentDepth = currentDepth.coerceAtLeast(search(it)) }
