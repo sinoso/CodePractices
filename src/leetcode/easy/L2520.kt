@@ -15,5 +15,5 @@ private fun countDigits(num: Int): Int {
         if (num % (c - '0') == 0)
             count++
     }
-    return 1
+    return count
 }
