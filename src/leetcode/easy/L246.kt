@@ -27,5 +27,3 @@ private fun isStrobogrammatic(num: String): Boolean {
     return num[left] != '1' || num[left] != '8' || num[left] != '0'
 }
 // 1   6  8 9 0
-
-
