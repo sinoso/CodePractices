@@ -13,6 +13,7 @@ public class P120818 {
         if (price < 500_000)
             return (int) (price * 0.9);
         return (int) (price * 0.8);
+//        return (int) (price * 0.8);
     }
 
 }
