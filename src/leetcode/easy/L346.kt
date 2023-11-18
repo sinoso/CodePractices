@@ -1,13 +1,15 @@
 package leetcode.easy
 
+import java.util.LinkedList
+
 
 fun main() {
 //    val class1 = MovingAverage(3)
 //    intArrayOf(1, 10, 3, 5).forEach {
 //        println(class1.next(it))
 //    }
-    with(MovingAverage(1)) {
-        intArrayOf(4, 0).forEach {
+    with(MovingAverage2(2)) {
+        intArrayOf(4, 0, 1).forEach {
             println(next(it))
         }
     }
@@ -17,32 +19,25 @@ class MovingAverage(val maxSize: Int) {
     private val queue = ArrayDeque<Int>()
     fun next(`val`: Int): Double {
         queue.add(`val`)
-        if(queue.size>maxSize)
+        if (queue.size > maxSize)
             queue.removeFirst()
         return queue.average()
     }
 }
 
-//class MovingAverage(val maxSize: Int) {
-//    private val list = ArrayList<Double>()
-//    fun next(`val`: Int): Double {
-//        list.add(`val`.toDouble())
-//        return list.takeLast(maxSize).average()
-//    }
-//}
+class MovingAverage2(val maxSize: Int) {
+    private var count = 0
+    private var sum = 0.0
+    private val queue = LinkedList<Int>()
 
-//class MovingAverage(val maxSize: Int) {
-//
-//    private val list = ArrayList<Double>()
-//
-//    fun next(`val`: Int): Double {
-//        if (list.size < maxSize)
-//            list.add(`val`.toDouble())
-//        else {
-//            list.add(`val`.toDouble())
-//            list.removeAt(0)
-//        }
-//        return list.average()
-//    }
-//
-//}
+    fun next(`val`: Int): Double {
+        queue.offer(`val`)
+        if (count == maxSize) {
+            sum -= queue.pop()
+        } else {
+            count++
+        }
+        sum += `val`
+        return sum / count
+    }
+}
