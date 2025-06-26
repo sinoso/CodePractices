@@ -7,7 +7,7 @@ fun main() {
     println(romanToInt("LVIII"))
     println(romanToInt("MCMXCIV"))
 }
-val map = HashMap<Char, Int>().apply {
+private val map = HashMap<Char, Int>().apply {
     put('I', 1)
     put('V', 5)
     put('X', 10)
