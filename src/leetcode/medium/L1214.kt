@@ -6,7 +6,7 @@ fun main() {
 
 }
 
-val set = hashSetOf<Int>()
+private val set = hashSetOf<Int>()
 private fun twoSumBSTs(root1: TreeNode?, root2: TreeNode?, target: Int): Boolean {
     var current = root1
     addAllNode(root1)
