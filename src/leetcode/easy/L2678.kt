@@ -5,4 +5,4 @@ fun main() {
 }
 
 private fun countSeniors(details: Array<String>): Int =
-    details.count { it[12] > '6' || (it[12] > '6' && it[11] > '0') }
+    details.count { it[it.lastIndex-3] > '6' || (it[it.lastIndex-3] >= '6' && it[it.lastIndex-2] > '0') }
