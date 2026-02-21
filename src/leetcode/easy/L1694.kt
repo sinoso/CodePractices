@@ -27,6 +27,5 @@ private fun reformatNumber(number: String): String {
         sb.append(chunks[chunks.lastIndex][0])
         return sb.toString()
     }
-    return chunks.joinToString("-"){it.joinToString("")}    }
-
+    return chunks.joinToString("-") { it.joinToString("") }
 }
